@@ -1,14 +1,19 @@
 from pyrogram import Client
 from decouple import config
 
+from db.d_base import Database
+from fsm.custom_fsm import FSM
 
-api_id = config("API_ID")
-api_hash = config("API_HASH")
+
 bot_token = config("BOT_TOKEN")
+db_path = config("DB_PATH")
 
 handlers = {"root": "handlers"}
 
 bot = Client("PyApp", bot_token=bot_token, plugins=handlers)
+db = Database(db_path)
+fsm = FSM()
 
 
-bot.run()
+if __name__ == "__main__":
+    bot.run()

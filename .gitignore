@@ -126,3 +126,4 @@ dmypy.json
 .pylintrc
 commands.txt
 PyApp.session
+database.db

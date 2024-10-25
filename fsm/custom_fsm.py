@@ -5,6 +5,7 @@ class FSM:
     def __init__(self) -> None:
         """Инициализация состояния FSM для каждого пользователя."""
         self.states: Dict[int, str] = {}
+        self.data: Dict[str, str] = {}
 
     def set_state(self, user_id: int, state: str) -> None:
         """Установка состояния для пользователя."""
