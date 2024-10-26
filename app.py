@@ -5,12 +5,13 @@ from db.d_base import Database
 from fsm.custom_fsm import FSM
 
 
-bot_token = config("BOT_TOKEN")
 db_path = config("DB_PATH")
+
+AUTH_SESSION = {}
 
 handlers = {"root": "handlers"}
 
-bot = Client("PyApp", bot_token=bot_token, plugins=handlers)
+bot = Client("PyApp", plugins=handlers)
 db = Database(db_path)
 fsm = FSM()
 
